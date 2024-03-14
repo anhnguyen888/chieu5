@@ -34,7 +34,6 @@ class ProductController {
                         // Không có lỗi, chuyển hướng ve trang chu hoac trang danh sach
                         header('Location: /chieu5');
                     }
-
                 } else {
                     // Lỗi tải lên
                     echo "Lỗi tải file!";
@@ -76,6 +75,62 @@ class ProductController {
             } else {
                 return false;
             }
+        }
+    }
+
+    public function detail($id){
+
+        $product = $this->productModel->getProductById($id);
+
+        // var_dump($product);
+        // die();
+
+        if ($product) {
+            include_once 'app/views/products/detail.php';
+        } else {
+            include_once 'app/views/share/not-found.php';
+        }
+    }
+
+    public function edit($id){
+
+        $product = $this->productModel->getProductById($id);
+
+        // var_dump($product);
+        // die();
+
+        if ($product) {
+            include_once 'app/views/products/edit.php';
+        } else {
+            include_once 'app/views/share/not-found.php';
+        }
+    }
+
+    public function update()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $name = $_POST['name'];
+            $id = $_POST['id'];
+            $price = $_POST['price'];
+            $description = $_POST['description'];
+
+            //kiem tra xem người dùng có update hình ảnh hay không?
+            if (isset($_FILES["thumbnail"])){
+                //co upload thay doi hinh
+                
+            }
+            else{
+                //khong upload thay doi hinh
+            }
+
+            // $edit = $this->productModel->updateProduct($id, $name, $description, $price);
+
+            // if ($edit) {
+            //     header('Location: /webbanhang/Product/listProducts');
+            // } else {
+            //     //thuc hien tuong tu nhu ham luu
+            //     echo "Đã xảy ra lỗi khi lưu sản phẩm.";
+            // }
         }
     }
 }
