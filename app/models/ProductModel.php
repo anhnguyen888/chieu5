@@ -2,6 +2,7 @@
 class ProductModel {
     private $conn;
     private $table_name = "products";
+    
 
     public function __construct($db) {
         $this->conn = $db;
