@@ -1,8 +1,10 @@
 <?php
 require_once 'config/database.php';
-// require_once 'app/controllers/ProductController.php';
 require_once 'app/models/ProductModel.php';
+require_once 'app/models/AccountModel.php';
+require_once 'app/helpers/SessionHelper.php';
 
+session_start();
 // Yêu cầu thêm các file cần thiết khác
 
 $url = $_GET['url'] ?? '';

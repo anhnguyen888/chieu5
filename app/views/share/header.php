@@ -16,9 +16,9 @@
     </header>
 
     <!-- Menu điều hướng sử dụng Bootstrap Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
         <div class="container">
-            <a class="navbar-brand" href="#">Trang Chủ</a>
+            <a class="navbar-brand text-danger" href="#">Trang Chủ</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,8 +32,11 @@
                         <a class="nav-link text-danger" href="#">Liên Hệ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-secondary" href="/chieu5/product/add">Thêm sản phẩm</a>
+                        <a class="nav-link btn btn-secondary text-danger" href="/chieu5/product/add">Thêm sản phẩm</a>
                     </li>
+                    <?php
+                        include_once 'app/views/share/authentication.php'; 
+                    ?>
                 </ul>
             </div>
         </div>

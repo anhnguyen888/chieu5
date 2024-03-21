@@ -10,6 +10,11 @@ class ProductController {
     }    
 
     public function add(){
+
+        if(SessionHelper::isAdmin() == false){
+            header ('Location: /chieu5/account/login');
+        }
+
         include_once 'app/views/products/create.php';
     }
 
